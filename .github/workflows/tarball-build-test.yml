@@ -8,8 +8,8 @@ jobs:
     strategy:
       matrix:
         OS_TYPE: ["almalinux"]
-        OS_VERSION: [8, 9]
-        OSG_VERSION: [24.123456, 25.123456]
+        OS_VERSION: [8, 9, 10]
+        OSG_VERSION: [25.123456, 26.123456]
     env:
       OS_TYPE: ${{ matrix.OS_TYPE }}
       OS_VERSION: ${{ matrix.OS_VERSION }}
