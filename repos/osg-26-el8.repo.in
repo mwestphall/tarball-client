@@ -1,0 +1,92 @@
+[osg-minefield-for-tarball]
+priority = 98
+gpgcheck = 0
+baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/osg-26-main-%(dver)s-development/latest/%(basearch)s/
+name = osg-26-main-%(dver)s-development (%(basearch)s)
+enabled = 0
+#includepkgs =
+
+[os-appstream]
+name=AlmaLinux 8 - AppStream
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/8/appstream
+#baseurl=https://repo.almalinux.org/almalinux/8/AppStream/%(basearch)s/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
+
+[os-baseos]
+name=AlmaLinux 8 - BaseOS
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/8/baseos
+#baseurl=https://repo.almalinux.org/almalinux/8/BaseOS/%(basearch)s/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
+
+[os-extras]
+name=AlmaLinux 8 - Extras
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/8/extras
+#baseurl=https://repo.almalinux.org/almalinux/8/extras/%(basearch)s/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
+
+[os-powertools]
+name=AlmaLinux 8 - PowerTools
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/8/powertools
+#baseurl=https://repo.almalinux.org/almalinux/8/PowerTools/%(basearch)s/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
+
+[os-epel]
+name=Extra Packages for Enterprise Linux 8 - %(basearch)s
+#baseurl=https://download.fedoraproject.org/pub/epel/8/Everything/%(basearch)s
+metalink=https://mirrors.fedoraproject.org/metalink?repo=epel-8&arch=%(basearch)s&infra=$infra&content=$contentdir
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+
+[osg-testing-for-tarball]
+priority = 98
+gpgcheck = 0
+baseurl = https://repo.opensciencegrid.org/osg/26-main/%(dver)s/testing/%(basearch)s/
+#baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/osg-26-main-%(dver)s-testing/latest/%(basearch)s/
+name = osg-26-main-%(dver)s-testing (%(basearch)s)
+enabled = 0
+includepkgs =
+
+[devops-production-for-tarball]
+priority = 98
+gpgcheck = 0
+baseurl = https://repo.opensciencegrid.org/osg/devops/%(dver)s/production/%(basearch)s/
+#baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/devops-%(dver)s-production/latest/%(basearch)s/
+name = osg-devops-production (%(basearch)s)
+enabled = 0
+#includepkgs =
+
+[devops-itb-for-tarball]
+priority = 98
+gpgcheck = 0
+baseurl = https://repo.opensciencegrid.org/osg/devops/%(dver)s/itb/%(basearch)s/
+#baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/devops-%(dver)s-itb/latest/%(basearch)s/
+name = osg-devops-itb (%(basearch)s)
+enabled = 0
+#includepkgs =
+
+# prerelease needs to have better priority than release-build to
+# properly handle the edge case where release-build has a package of
+# higher version than prerelease.
+[osg-prerelease-for-tarball]
+priority = 97
+gpgcheck = 0
+baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/osg-26-main-%(dver)s-prerelease/latest/%(basearch)s/
+name = osg-26-main-%(dver)s-prerelease (%(basearch)s)
+enabled = 1
+
+[osg-release-for-tarball]
+priority = 98
+gpgcheck = 0
+baseurl = https://repo.opensciencegrid.org/osg/26-main/%(dver)s/release/%(basearch)s/
+#baseurl = http://koji.chtc.wisc.edu/mnt/koji/repos/osg-26-main-%(dver)s-release/latest/%(basearch)s/
+name = osg-26-main-%(dver)s-release (%(basearch)s)
+enabled = 1
